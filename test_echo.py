@@ -4,7 +4,7 @@ import json
 
 def test_get_request():
     response = requests.get("https://postman-echo.com/get")
-    assert response.status_code == 200
+    assert response.status_code == !200
     data = response.json()
     assert 'args' in data and isinstance(data['args'], dict), "No args or not a dictionary."
 
