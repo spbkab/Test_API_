@@ -22,10 +22,11 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pytest-allure-adf
 
       - name: Run tests
         run: |
-          pytest --alluredir=./reports/allure-report
+          pytest --allure-reports-dir=./reports/allure-report
 
       - name: Generate report
         if: always() && success()
