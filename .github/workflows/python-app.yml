@@ -25,8 +25,9 @@ jobs:
           pip install allure-pytest allure-python-commons
 
       - name: Run tests
+        shell: bash
         run: |
-          pytest --allure-reports-dir=./reports/allure-report
+          pytest --allure-reports-dir=./reports/allure-report    
 
       - name: Generate report
         if: always() && success()
